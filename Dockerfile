@@ -5,54 +5,35 @@
 
 FROM dockerbase/devbase-scala
 
-ENV LC_ALL C
-ENV DEBIAN_FRONTEND noninteractive
-
 USER    root
 
 # Run the build scripts
-RUN     apt-get update
+RUN     apt-get update && \
+        apt-get install -y --no-install-recommends rsync && \
+        apt-get clean
 
-RUN     apt-get install -y --no-install-recommends rsync
-
-# Clean up system
-RUN     apt-get clean
-
-# Information Of Package
-ENV     PKG_ALIAS hadoop
-ENV     PKG_VERSION $PKG_ALIAS-2.5.1
-ENV     PKG_PACKAGE $PKG_VERSION.tar.gz
-ENV     PKG_LINK http://apache.spinellicreations.com/hadoop/common/hadoop-2.5.1/$PKG_PACKAGE
-
-# Intall scala
+# Intall hadoop
 RUN     cd /tmp && \
-        curl -O -L $PKG_LINK && \
-        tar -zxf /tmp/$PKG_PACKAGE && \
-        mv /tmp/$PKG_VERSION /usr/local/$PKG_VERSION && \
-        ln -s /usr/local/$PKG_VERSION /usr/local/$PKG_ALIAS
+        curl -O -L http://apache.spinellicreations.com/hadoop/common/hadoop-2.5.1/hadoop-2.5.1.tar.gz && \
+        tar -zxf /tmp/hadoop-2.5.1.tar.gz && \
+        mv /tmp/hadoop-2.5.1 /usr/local/hadoop-2.5.1 && \
+        ln -s /usr/local/hadoop-2.5.1 /usr/local/hadoop && \
+        rm -rf /tmp/* /var/tmp/*
 
-ENV     HADOOP_HOME /usr/local/$PKG_ALIAS
+ENV     HADOOP_HOME /usr/local/hadoop
 ENV     PATH $PATH:$HADOOP_HOME/bin
 
 
-# Information Of Package
-ENV     PKG_ALIAS hive
-ENV	PKG_VERSION $PKG_ALIAS-0.13.1
-ENV	PKG_PACKAGE apache-$PKG_VERSION-bin.tar.gz
-ENV	PKG_LINK http://www.dsgnwrld.com/am/hive/hive-0.13.1/$PKG_PACKAGE
-
-# Intall sbt
+# Intall hive
 RUN     cd /tmp && \
-        curl -O -L $PKG_LINK && \
-        tar -zxf /tmp/$PKG_PACKAGE && \
-        mv /tmp/apache-$PKG_VERSION-bin /usr/local/$PKG_VERSION && \
-        ln -s /usr/local/$PKG_VERSION /usr/local/$PKG_ALIAS
+        curl -O -L http://www.dsgnwrld.com/am/hive/hive-0.13.1/apache-hive-0.13.1-bin.tar.gz && \
+        tar -zxf /tmp/apache-hive-0.13.1-bin.tar.gz && \
+        mv /tmp/apache-hive-0.13.1-bin /usr/local/hive-0.13.1 && \
+        ln -s /usr/local/hive-0.13.1 /usr/local/hive && \
+        rm -rf /tmp/* /var/tmp/*
 
-ENV     HIVE_HOME /usr/local/$PKG_ALIAS
+ENV     HIVE_HOME /usr/local/hive
 ENV     PATH $PATH:$HIVE_HOME/bin
-
-# Run the build scripts
-RUN     rm -rf /tmp/* /var/tmp/*
 
 USER    devbase
 
@@ -61,6 +42,3 @@ ENV     HOME /home/devbase
 
 # Define working directory.
 WORKDIR /home/devbase
-
-# Define default command.
-CMD ["bash"]

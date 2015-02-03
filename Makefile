@@ -1,5 +1,5 @@
 NAME = dockerbase/devbase-hadoop
-VERSION = 1.0
+VERSION = 1.1
 
 .PHONY: all build test tag_latest release ssh enter
 
@@ -22,10 +22,10 @@ ls_volume:
 		ls -ls $$DIR
 
 version:
-	docker run -it --rm $(NAME):$(VERSION) sh -c " lsb_release -d ; git --version ; ruby -v ; ssh -V ; make -v " | tee COMPONENTS
+	docker run -it --rm $(NAME):$(VERSION) sh -c " lsb_release -d ; git --version ; ssh -V ; make -v " | tee COMPONENTS
 	docker run -it --rm $(NAME):$(VERSION) sh -c " javac -version ; java -version " | tee -a COMPONENTS
 	docker run -it --rm $(NAME):$(VERSION) sh -c " hadoop version " | tee -a COMPONENTS
-	docker run -it --rm $(NAME):$(VERSION) sh -c " ls  -d /usr/local/hive-* | cut -d / -f 4 | tr - ':' " | tee -a COMPONENTS
+	docker run -it --rm $(NAME):$(VERSION) sh -c " ls  -d /usr/local/apache-hive-* | cut -d / -f 4 | tr - ':' " | tee -a COMPONENTS
 	dos2unix COMPONENTS
 	sed -i -e 's/^/    /' COMPONENTS
 	sed -i -e '/^### Components & Versions/q' README.md

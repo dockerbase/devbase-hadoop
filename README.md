@@ -24,7 +24,6 @@ This repository contains **Dockerbase** of [Devbase-hadoop](http://hadoop.apache
 
     Description:	Ubuntu 14.04.1 LTS
     git version 1.9.1
-    ruby 1.9.3p484 (2013-11-22 revision 43786) [x86_64-linux]
     OpenSSH_6.6.1p1 Ubuntu-2ubuntu2, OpenSSL 1.0.1f 6 Jan 2014
     GNU Make 3.81
     Copyright (C) 2006  Free Software Foundation, Inc.
@@ -37,10 +36,10 @@ This repository contains **Dockerbase** of [Devbase-hadoop](http://hadoop.apache
     java version "1.8.0_20"
     Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
     Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)
-    Hadoop 2.5.1
-    Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 2e18d179e4a8065b6a9f29cf2de9451891265cce
-    Compiled by jenkins on 2014-09-05T23:11Z
+    Hadoop 2.6.0
+    Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r e3496499ecb8d220fba99dc5ed4c99c8f9e33bb1
+    Compiled by jenkins on 2014-11-13T21:10Z
     Compiled with protoc 2.5.0
-    From source with checksum 6424fcab95bfff8337780a181ad7c78
-    This command was run using /usr/local/hadoop-2.5.1/share/hadoop/common/hadoop-common-2.5.1.jar
-    hive:0.13.1
+    From source with checksum 18e43357c8f927c0695f1e9522859d6a
+    This command was run using /usr/local/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar
+    apache:hive:0.14.0:bin

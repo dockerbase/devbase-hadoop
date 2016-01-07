@@ -12,7 +12,7 @@ test:
 	docker run -it --rm $(NAME):$(VERSION) echo hello world!
 
 run:
-	docker run -it --rm --name $(subst /,-,$(NAME)) $(NAME):$(VERSION)
+	docker run -it --rm -v /home/share:/hadoop -v /home/devbase:/home/devbase -v /home/hadoop.tmp:/tmp --name $(subst /,-,$(NAME)) $(NAME):$(VERSION)
 
 ls_volume:
 	@ID=$$(docker ps | grep -F "$(NAME):$(VERSION)" | awk '{ print $$1 }') && \

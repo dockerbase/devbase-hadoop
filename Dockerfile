@@ -1,6 +1,6 @@
-# VERSION 1.1
-# DOCKER-VERSION  1.2.0
-# AUTHOR:         Richard Lee <lifuzu@gmail.com>
+# VERSION 1.2
+# DOCKER-VERSION  1.4.1
+# AUTHOR:         Fuzu Li <lifuzu@gmail.com>
 # DESCRIPTION:    Devbase-hadoop Image Container
 
 FROM dockerbase/devbase-scala

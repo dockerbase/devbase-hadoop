@@ -18,7 +18,7 @@ This repository contains **Dockerbase** of [Devbase-hadoop](http://hadoop.apache
 
 ### Usage
 
-    docker run -it --rm --name dockerbase-devbase-hadoop dockerbase/devbase-hadoop
+    docker run -it --rm [-v /home/devbase:/home/devbase] --name dockerbase-devbase-hadoop dockerbase/devbase-hadoop
 
 ### Components & Versions
 
@@ -36,10 +36,10 @@ This repository contains **Dockerbase** of [Devbase-hadoop](http://hadoop.apache
     java version "1.8.0_20"
     Java(TM) SE Runtime Environment (build 1.8.0_20-b26)
     Java HotSpot(TM) 64-Bit Server VM (build 25.20-b23, mixed mode)
-    Hadoop 2.6.0
-    Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r e3496499ecb8d220fba99dc5ed4c99c8f9e33bb1
-    Compiled by jenkins on 2014-11-13T21:10Z
+    Hadoop 2.7.1
+    Subversion https://git-wip-us.apache.org/repos/asf/hadoop.git -r 15ecc87ccf4a0228f35af08fc56de536e6ce657a
+    Compiled by jenkins on 2015-06-29T06:04Z
     Compiled with protoc 2.5.0
-    From source with checksum 18e43357c8f927c0695f1e9522859d6a
-    This command was run using /usr/local/hadoop-2.6.0/share/hadoop/common/hadoop-common-2.6.0.jar
-    apache:hive:0.14.0:bin
+    From source with checksum fc0a1a23fc1868e4d5ee7fa2b28a58a
+    This command was run using /usr/local/hadoop-2.7.1/share/hadoop/common/hadoop-common-2.7.1.jar
+    apache:hive:1.2.1:bin

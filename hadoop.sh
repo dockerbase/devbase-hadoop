@@ -1,6 +1,6 @@
 # Information Of Package
-HADOOP_VERSION=hadoop-2.6.0
-HADOOP_PACKAGE=hadoop-2.6.0.tar.gz
+HADOOP_VERSION=hadoop-2.7.1
+HADOOP_PACKAGE=hadoop-2.7.1.tar.gz
 HADOOP_LINK=http://apache.spinellicreations.com/hadoop/common/$HADOOP_VERSION/$HADOOP_PACKAGE
 
 # Intall hadoop

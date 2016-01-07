@@ -1,5 +1,5 @@
 # Information Of Package
-HIVE_VERSION=hive-0.14.0
+HIVE_VERSION=hive-1.2.1
 HIVE_FOLDER=apache-$HIVE_VERSION-bin
 HIVE_PACKAGE=$HIVE_FOLDER.tar.gz
 HIVE_LINK=http://download.nextag.com/apache/hive/$HIVE_VERSION/$HIVE_PACKAGE
